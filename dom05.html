@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<style>
+    input[type=text],
+    select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+    div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 70px;
+    }
+</style>
+
+<body>
+
+    <h3 style="text-align: center;">DOM - Local Storage </h3>
+
+    <div>
+        <form onsubmit="myfunc(event)">
+
+            <label for="fname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Your name..">
+
+            <label for="lname">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email..">
+
+
+            <input type="submit" value="Submit">
+
+        </form>
+
+    </div>
+    <script>
+
+        function myfunc(event) {
+
+            event.preventdefault();
+
+            var full_name = document.getElementById("fullname").value;
+            var email_id = document.getElementById("email").value;
+
+            localStorage.setItem('Full_Name',full_name);
+            localStorage.setItem('Email_ID',email_id);
+
+        }
+    </script>
+</body>
+
+</html>
